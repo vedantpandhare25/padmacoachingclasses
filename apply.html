@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply Now | Padma Coaching Classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">PADMA</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses & Fees</a></li>
+                <li><a href="rankers.html">Our Rankers</a></li>
+                <li><a href="apply.html" class="nav-btn active">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section-padding" style="background-color: var(--bg-light);">
+        <h2 class="section-title">Admission Application</h2>
+        <p class="section-subtitle">Take the first step towards a brilliant academic career. Fill out the form below and our team will contact you shortly.</p>
+        
+        <div class="form-wrapper">
+            <form id="admissionForm">
+                <div class="form-group">
+                    <label>Student's Full Name</label>
+                    <input type="text" class="form-control" name="Name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" class="form-control" name="Phone" required placeholder="+91 xxxxx xxxxx">
+                </div>
+                
+                <div class="form-group">
+                    <label>Select Course</label>
+                    <select class="form-control" id="courseSelect" name="Course" required>
+                        <option value="" disabled selected>Choose your program...</option>
+                        <option value="9-10">9th-10th Standard (State/CBSE)</option>
+                        <option value="11-12">11th-12th Commerce</option>
+                        <option value="Bachelors">Bachelors (BAF/BBI/BMS/B-COM)</option>
+                        <option value="CA">Chartered Accountancy (CA)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 20px; border-radius: 5px;">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="padding: 20px 5%; text-align: center;">
+        <p>&copy; 2026 Padma Coaching Classes. Contact: +91 8888212171</p>
+    </footer>
+
+    <script>
+        // 1. Auto-fill the dropdown based on what they clicked
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedCourse = urlParams.get('course');
+            if(selectedCourse) {
+                document.getElementById('courseSelect').value = selectedCourse;
+            }
+        };
+
+        // 2. Send data to Google Sheets
+        const form = document.getElementById('admissionForm');
+        
+        form.addEventListener('submit', e => {
+            e.preventDefault(); // Stops the page from refreshing
+
+            // Change button text so the user knows it's working
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = "Submitting...";
+            btn.disabled = true;
+
+            // PASTE YOUR GOOGLE SCRIPT URL HERE inside the quotes
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby0JZ5_YxGKiKmnV_56vfT_BybAVybktupNCr9gqzwTBJicjmpto8kYUS-gtqRMXAST/exec';
+
+            const formData = new FormData(form);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    alert("Success! Your application has been submitted.");
+                    form.reset(); // Clear the form fields
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                })
+                .catch(error => {
+                    alert("Oops! Something went wrong. Please try again.");
+                    console.error('Error!', error.message);
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>
