@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-        <div class="logo">PADMA</div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses & Fees</a></li>
-                <li><a href="rankers.html">Our Rankers</a></li>
-                <li><a href="apply.html" class="nav-btn">Apply Now</a></li>
-            </ul>
-        </nav>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Rankers | Padma Coaching Classes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .ranker-card { text-align: center; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .ranker-photo { width: 120px; height: 120px; background-color: var(--primary-light); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; }
+        .score { font-size: 1.5rem; color: var(--accent); font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
 <body>
 
     <header>
         <div class="logo">PADMA</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <nav>
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="courses.html">Courses & Fees</a></li>
                 <li><a href="rankers.html" class="active">Our Rankers</a></li>
@@ -55,14 +55,11 @@
     <footer style="padding: 20px 5%; text-align: center;">
         <p>&copy; 2026 Padma Coaching Classes. Contact: +91 8888212171</p>
     </footer>
-        
-        <script>
+
+    <script>
         function toggleMenu() {
             document.getElementById("nav-menu").classList.toggle("show");
         }
     </script>
 </body>
-
 </html>
-
-
