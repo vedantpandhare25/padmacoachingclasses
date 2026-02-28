@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-        <div class="logo">PADMA</div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses & Fees</a></li>
-                <li><a href="rankers.html">Our Rankers</a></li>
-                <li><a href="apply.html" class="nav-btn">Apply Now</a></li>
-            </ul>
-        </nav>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padma Coaching Classes | Legacy of Excellence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
     <header>
         <div class="logo">PADMA</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <nav>
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="courses.html">Courses & Fees</a></li>
                 <li><a href="rankers.html">Our Rankers</a></li>
@@ -28,19 +23,15 @@
 
     <section class="hero">
         <div>
-            <h1>Shaping Careers. Building Futures.</h1>
+            <h1>Shaping Careers.<br>Building Futures.</h1>
             <p>Welcome to Padma Coaching Classes, Ulhasnagar's premier educational institute. We empower students from 9th grade to Professional CA certifications.</p>
             <a href="courses.html" class="btn-primary">Explore Our Programs</a>
         </div>
     </section>
 
-    <section class="section-padding pillars-section">
+    <section class="section-padding">
         <h2 class="section-title">The Pillars of Padma</h2>
-        <p class="section-subtitle">A legacy built on unwavering dedication, expert guidance, and a commitment to student success.</p>
-        
-        <div class="pillar-names">
-            Dr. Lal Tanwani &nbsp; | &nbsp; Adv. Deepesh Tanwani
-        </div>
+        <p class="section-subtitle" style="font-weight: bold; color: var(--primary);">Dr. Lal Tanwani &nbsp; | &nbsp; Adv. Deepesh Tanwani</p>
         <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #555;">
             Under the visionary leadership of Dr. Lal Tanwani and Adv. Deepesh Tanwani, Padma Coaching Classes has established itself as a beacon of academic excellence. Our founders bring decades of profound expertise, ensuring that every student receives not just tutoring, but true mentorship.
         </p>
@@ -78,12 +69,12 @@
             <div class="footer-col">
                 <h3>Head Office (Branch 1)</h3>
                 <p>3rd floor, Shop no.302, Jeevan Chhaya Building, Ulhasnagar, Thane (421003)</p>
-                <p>📞 +91 8888212171 | +91 7057676076</p>
+                <p>📞 +91 8888212171</p>
             </div>
             <div class="footer-col">
                 <h3>Netaji Bazar (Branch 2)</h3>
                 <p>Near Shivneri Hospital, Baba Namandas Nagar, Netaji Chowk, Ulhasnagar, Thane (421004)</p>
-                <p>📞 +91 8484977000 | 0251-2534444</p>
+                <p>📞 +91 8484977000</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -91,7 +82,10 @@
         </div>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-menu").classList.toggle("show");
+        }
+    </script>
 </body>
-
 </html>
-
