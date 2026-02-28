@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-        <div class="logo">PADMA</div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses & Fees</a></li>
-                <li><a href="rankers.html">Our Rankers</a></li>
-                <li><a href="apply.html" class="nav-btn">Apply Now</a></li>
-            </ul>
-        </nav>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | Padma Coaching Classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
     <header>
         <div class="logo">PADMA</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <nav>
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="courses.html">Courses & Fees</a></li>
                 <li><a href="rankers.html">Our Rankers</a></li>
@@ -63,7 +58,12 @@
     </footer>
 
     <script>
-        // 1. Auto-fill the dropdown based on what they clicked
+        // 1. Hamburger Menu Toggle
+        function toggleMenu() {
+            document.getElementById("nav-menu").classList.toggle("show");
+        }
+
+        // 2. Auto-fill the dropdown based on what they clicked
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
             const selectedCourse = urlParams.get('course');
@@ -72,27 +72,25 @@
             }
         };
 
-        // 2. Send data to Google Sheets
+        // 3. Send data to Google Sheets
         const form = document.getElementById('admissionForm');
         
         form.addEventListener('submit', e => {
-            e.preventDefault(); // Stops the page from refreshing
-
-            // Change button text so the user knows it's working
+            e.preventDefault(); 
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.innerText;
             btn.innerText = "Submitting...";
             btn.disabled = true;
 
-            // PASTE YOUR GOOGLE SCRIPT URL HERE inside the quotes
-            const scriptURL = 'https://script.google.com/macros/s/AKfycby0JZ5_YxGKiKmnV_56vfT_BybAVybktupNCr9gqzwTBJicjmpto8kYUS-gtqRMXAST/exec';
+            // --- PASTE YOUR GOOGLE SCRIPT URL HERE ---
+            const scriptURL = 'YOUR_LONG_GOOGLE_WEB_APP_URL_GOES_HERE';
 
             const formData = new FormData(form);
 
             fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => {
                     alert("Success! Your application has been submitted.");
-                    form.reset(); // Clear the form fields
+                    form.reset(); 
                     btn.innerText = originalText;
                     btn.disabled = false;
                 })
@@ -104,13 +102,5 @@
                 });
         });
     </script>
-        <script>
-        function toggleMenu() {
-            document.getElementById("nav-menu").classList.toggle("show");
-        }
-    </script>
 </body>
-
 </html>
-
-
