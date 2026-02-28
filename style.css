@@ -106,4 +106,73 @@ nav a:hover, nav a.active { color: var(--primary-light); }
 footer { background-color: var(--primary); color: rgba(255,255,255,0.8); padding: 60px 5% 30px; margin-top: auto; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
 .footer-col h3 { color: var(--accent); margin-bottom: 20px; font-size: 1.3rem; }
+
 .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
+/* =========================================
+   MOBILE RESPONSIVENESS (Media Queries)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Fix the Header & Navigation */
+    header {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    body {
+        padding-top: 130px; /* Accounts for the new, taller stacked header */
+    }
+
+    /* 2. Fix the Hero Section (Make text smaller so it fits) */
+    .hero {
+        height: auto;
+        padding: 100px 20px 60px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem; /* Shrinks the giant headline */
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* 3. Fix the Spacing and Titles */
+    .section-padding {
+        padding: 50px 5%; /* Less empty space on mobile */
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* 4. Force all Grids to Stack into a Single Column! */
+    .grid-2, 
+    .grid-3, 
+    .grid-4, 
+    .footer-grid {
+        grid-template-columns: 1fr; /* This makes courses and rankers stack one-by-one */
+        gap: 20px;
+    }
+
+    /* 5. Center align the footer on mobile */
+    .footer-col {
+        text-align: center;
+    }
+    
+    /* 6. Adjust Form padding */
+    .form-wrapper {
+        padding: 30px 20px;
+    }
+}
