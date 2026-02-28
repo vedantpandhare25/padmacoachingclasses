@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-        <div class="logo">PADMA</div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses & Fees</a></li>
-                <li><a href="rankers.html">Our Rankers</a></li>
-                <li><a href="apply.html" class="nav-btn">Apply Now</a></li>
-            </ul>
-        </nav>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses & Fees | Padma Coaching Classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
     <header>
         <div class="logo">PADMA</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <nav>
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="courses.html" class="active">Courses & Fees</a></li>
                 <li><a href="rankers.html">Our Rankers</a></li>
@@ -37,7 +32,7 @@
                     <p>State Board & CBSE</p>
                     <div class="fee-tag">₹ 25,000 <span>/ year</span></div>
                 </div>
-                <a href="apply.html?course=9-10" class="btn-primary btn-outline">Apply for 9th-10th</a>
+                <a href="apply.html?course=9-10" class="btn-primary btn-outline" style="margin-top: 20px;">Apply for 9th-10th</a>
             </div>
 
             <div class="card">
@@ -46,7 +41,7 @@
                     <p>Junior College Coaching</p>
                     <div class="fee-tag">₹ 35,000 <span>/ year</span></div>
                 </div>
-                <a href="apply.html?course=11-12" class="btn-primary btn-outline">Apply for 11th-12th</a>
+                <a href="apply.html?course=11-12" class="btn-primary btn-outline" style="margin-top: 20px;">Apply for 11th-12th</a>
             </div>
 
             <div class="card">
@@ -55,7 +50,7 @@
                     <p>BAF, BBI, BMS, B-COM</p>
                     <div class="fee-tag">₹ 40,000 <span>/ year</span></div>
                 </div>
-                <a href="apply.html?course=Bachelors" class="btn-primary btn-outline">Apply for Bachelors</a>
+                <a href="apply.html?course=Bachelors" class="btn-primary btn-outline" style="margin-top: 20px;">Apply for Bachelors</a>
             </div>
 
             <div class="card">
@@ -64,7 +59,7 @@
                     <p>Professional CA Preparation</p>
                     <div class="fee-tag">₹ 50,000 <span>/ course</span></div>
                 </div>
-                <a href="apply.html?course=CA" class="btn-primary btn-outline">Apply for CA</a>
+                <a href="apply.html?course=CA" class="btn-primary btn-outline" style="margin-top: 20px;">Apply for CA</a>
             </div>
         </div>
     </section>
@@ -72,14 +67,11 @@
     <footer style="padding: 20px 5%; text-align: center;">
         <p>&copy; 2026 Padma Coaching Classes. Contact: +91 8888212171</p>
     </footer>
-        <script>
+
+    <script>
         function toggleMenu() {
             document.getElementById("nav-menu").classList.toggle("show");
         }
     </script>
-
 </body>
-
 </html>
-
-
